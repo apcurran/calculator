@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gugi', cursive;
+}
+
+:root {
+    font-size: 16px;
+}
+
+body {
+    background: #9CECFB;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+    background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+
+}
+
+.main-container {
+    margin: 4em auto;
+}
+
+header h1 {
+    margin: 1em;
+    font-size: 3rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.calc-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-gap: 0.15rem;
+}
+
+.clear,
+.equals {
+    grid-column: span 2;
+}
+
+.calc-container > button {
+    background-color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    font-size: 1.4rem;
+    outline: none;
+}
+
+.calc-container > button:hover {
+    background-color: rgba(255, 255, 255, 0.95)
+}
+
+.output {
+    grid-column: 1 / -1;
+    padding: 0.2em;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    font-size: 2.5rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width: 38em) {
+    header h1 {
+        margin: 0.5em;
+    }
+
+    .calc-container {
+        grid-template-columns: repeat(4, 75px);
+        grid-template-rows: minmax(75px, auto) repeat(5, 60px);
+    }
+}
