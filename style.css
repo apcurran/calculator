@@ -5,12 +5,8 @@
     font-family: 'Gugi', cursive;
 }
 
-:root {
-    font-size: 16px;
-}
-
 body {
-    background: #9CECFB;  /* fallback for old browsers */
+    background: #9CECFB;  /* Fallback for old browsers */
     background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
     background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
 
@@ -60,6 +56,8 @@ header h1 {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    word-break: break-all;
+    word-wrap: break-word;
 
     font-size: 2.5rem;
     color: #fff;
