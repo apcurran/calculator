@@ -27,8 +27,6 @@ function divide(a, b) {
     return a / b;
 }
 
-// Operate function
-
 function operate(operator, a, b) {
     switch (operator) {
         case "+":
@@ -50,6 +48,12 @@ function operate(operator, a, b) {
     }
 }
 
+function checkForExistingDecimal() {
+    if(output.textContent.indexOf(".") < 1) {
+        output.textContent += ".";
+    }
+}
+
 function clear() {
     // I need to clear the stored previous operand & current operand here.
     firstOperand = "";
@@ -57,12 +61,16 @@ function clear() {
     output.textContent = "";
 }
 
+function deleteLast() {
+    output.textContent = output.textContent.slice(0, -1);
+}
+
 clearBtn.addEventListener("click", () => {
     clear();
 });
 
 deleteBtn.addEventListener("click", () => {
-    output.textContent = output.textContent.slice(0, -1);
+    deleteLast();
 });
 
 // Loop through all operators and attach a click event to store the first operand and current operator.
@@ -76,17 +84,15 @@ operators.forEach((op) => {
 
 equalsBtn.addEventListener("click", (event) => {
     secondOperand = parseFloat(output.textContent);
-    let solution = operate(operation, firstOperand, secondOperand);
+    const solution = operate(operation, firstOperand, secondOperand);
     output.textContent = solution;
 });
 
 numButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
-        let currentBtn = event.target;
+        const currentBtn = event.target;
         if(currentBtn.textContent === ".") {
-            if(output.textContent.indexOf(".") < 1) {
-                output.textContent += ".";
-            }
+            checkForExistingDecimal();
         } else {
             output.textContent += currentBtn.textContent;
         }
