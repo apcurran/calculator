@@ -65,13 +65,9 @@ function deleteLast() {
     output.textContent = output.textContent.slice(0, -1);
 }
 
-clearBtn.addEventListener("click", () => {
-    clear();
-});
+clearBtn.addEventListener("click", clear);
 
-deleteBtn.addEventListener("click", () => {
-    deleteLast();
-});
+deleteBtn.addEventListener("click", deleteLast);
 
 // Loop through all operators and attach a click event to store the first operand and current operator.
 operators.forEach((op) => {
