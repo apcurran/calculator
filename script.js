@@ -117,5 +117,4 @@ const calculator = (() => {
     
     clearBtn.addEventListener("click", calcModule.clear);
     deleteBtn.addEventListener("click", calcModule.deleteLast);
-
 })();
