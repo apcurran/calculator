@@ -8,13 +8,6 @@
 body {
     background: #9CECFB;  /* Fallback for old browsers */
     background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
-    min-height: 100vh;
-}
-
-.main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 header h1 {
@@ -25,12 +18,14 @@ header h1 {
 }
 
 .calc-container {
+    margin: 0 auto;
+    width: 38rem;
+    max-width: 90%;
     display: grid;
-    justify-content: center;
-    align-content: center;
+    place-content: center center;
 
-    grid-template-columns: repeat(4, 120px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(6.25rem, auto);
     grid-gap: 0.15rem;
 }
 
@@ -67,11 +62,10 @@ header h1 {
 
 @media screen and (max-width: 38em) {
     header h1 {
-        margin: 0.5em;
+        margin: .8em;
     }
 
     .calc-container {
-        grid-template-columns: repeat(4, 75px);
-        grid-template-rows: minmax(75px, auto) repeat(5, 60px);
+        grid-auto-rows: minmax(4.5rem, auto);
     }
 }
