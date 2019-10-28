@@ -62,10 +62,10 @@ header h1 {
 
 @media screen and (max-width: 38em) {
     header h1 {
-        margin: .8em;
+        margin: .3em;
     }
 
     .calc-container {
-        grid-auto-rows: minmax(4.5rem, auto);
+        grid-auto-rows: minmax(4rem, auto);
     }
 }
