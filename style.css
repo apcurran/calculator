@@ -7,13 +7,14 @@
 
 body {
     background: #9CECFB;  /* Fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
     background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
-
+    min-height: 100vh;
 }
 
 .main-container {
-    margin: 4em auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header h1 {
